@@ -34,3 +34,16 @@ jobs:
 
       - name: Ejecutar pruebas unitarias
         run: mvn --batch-mode test
+        
+      - name: Generar reporte HTML de pruebas
+        if: success() || failure()
+        run: mvn --batch-mode surefire-report:report
+
+      - name: Publicar reporte de pruebas
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-pruebas-junit
+          path: target/reports/
+          if-no-files-found: error
+          retention-days: 14
