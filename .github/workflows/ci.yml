@@ -1,0 +1,49 @@
+
+name: Integracion Continua - Java Maven
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    name: Compilacion y pruebas unitarias
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Compilar proyecto
+        run: mvn --batch-mode clean compile
+
+      - name: Ejecutar pruebas unitarias
+        run: mvn --batch-mode test
+        
+      - name: Generar reporte HTML de pruebas
+        if: success() || failure()
+        run: mvn --batch-mode surefire-report:report
+
+      - name: Publicar reporte de pruebas
+        if: success() || failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-pruebas-junit
+          path: target/reports/
+          if-no-files-found: error
+          retention-days: 14
