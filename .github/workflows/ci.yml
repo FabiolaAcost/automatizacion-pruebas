@@ -32,7 +32,7 @@ jobs:
       - name: Compilar proyecto
         run: mvn --batch-mode clean compile
 
-      - name: Ejecutar pruebas unitarias
+      - name: Ejecutar pruebas unitarias y BDD
         run: mvn --batch-mode test
         
       - name: Generar reporte HTML de pruebas
