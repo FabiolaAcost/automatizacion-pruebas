@@ -12,6 +12,10 @@ import org.junit.platform.suite.api.Suite;
     key = "cucumber.glue",
     value = "cl.iplacex.bdd"
 )
+@ConfigurationParameter(
+    key = "cucumber.plugin",
+    value = "pretty, html:target/cucumber-reports/cucumber.html"
+)
 public class RunCucumberTest {
     
 }
