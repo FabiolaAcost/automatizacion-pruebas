@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Calidad - Automatización de Pruebas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard de Calidad de Software</h1>
+        <p>Automatización de Pruebas - IPLACEX</p>
+    </header>
+
+    <main>
+        <h2>Métricas de pruebas funcionales y performance</h2>
+        <p>
+            Dashboard demostrativo basado en los resultados
+            obtenidos mediante JUnit 5, Cucumber y JMeter.
+        </p>
+        
+    
+    <section>
+        <h2>Pruebas funcionales</h2>
+
+        <div class="metricas-grid">
+            <div class="metrica-card">
+                <h3>JUnit 5</h3>
+                <p class="metrica-valor">3 / 3</p>
+                <p>Pruebas exitosas</p>
+                <p class="metrica-exito">100% de éxito</p>
+                <p>Errores: 0</p>
+            </div>
+
+            <div class="metrica-card">
+            <h3>Cucumber BDD</h3>
+            <p class="metrica-valor">5 / 5</p>
+            <p>Casos BDD exitosos</p>
+            <p class="metrica-exito">100% de éxito</p>
+            <p>Errores: 0</p>
+        </div>
+    </div>
+</section>
+
+
+    
+<section>
+    <h2>Pruebas de performance - JMeter</h2>
+
+    <div class="metricas-grid">
+        <div class="metrica-card">
+            <h3>Ejecuciones</h3>
+            <p class="metrica-valor">100</p>
+            <p>10 usuarios virtuales</p>
+            <p>10 repeticiones por usuario</p>
+        </div>
+
+        <div class="metrica-card">
+            <h3>Throughput</h3>
+            <p class="metrica-valor">11,1</p>
+            <p>Operaciones por segundo</p>
+        </div>
+
+        <div class="metrica-card">
+            <h3>Tiempo máximo</h3>
+            <p class="metrica-valor">16 ms</p>
+            <p>Tiempo promedio: 0 ms (redondeado)</p>
+        </div>
+
+        <div class="metrica-card">
+            <h3>Tasa de errores</h3>
+            <p class="metrica-valor">0%</p>
+            <p class="metrica-exito">100 ejecuciones sin errores</p>
+        </div>
+    </div>
+
+    <p>
+        Resultados obtenidos mediante JMeter sobre la lógica Java
+        de LoginService, sin incluir latencia de red ni servidor HTTP.
+    </p>
+</section>
+
+    </main>
+</body>
+</html>
